@@ -1,0 +1,12 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.constant.Constable"><rhs name\="java.lang.Integer"/><rhs name\="Constant$OrderStatus"/><rhs name\="Constant$PhoneNumberType"/></lhs><lhs name\="java.lang.constant.ConstantDesc"><rhs name\="java.lang.Integer"/></lhs><lhs name\="java.lang.Number"><rhs name\="java.lang.Integer"/></lhs><lhs name\="PhoneNumber"><rhs name\="PhoneNumber"/></lhs><lhs name\="java.lang.Enum"><rhs name\="Constant$OrderStatus"/><rhs name\="Constant$PhoneNumberType"/></lhs><lhs name\="Constant$OrderStatus"><rhs name\="Constant$OrderStatus"/></lhs><lhs name\="Product"><rhs name\="Product"/></lhs><lhs name\="CartDetail"><rhs name\="CartDetail"/></lhs><lhs name\="Cart"><rhs name\="Cart"/></lhs><lhs name\="Order"><rhs name\="Order"/></lhs><lhs name\="Shipping"><rhs name\="Shipping"/></lhs><lhs name\="Address"><rhs name\="Address"/></lhs><lhs name\="Constant$PhoneNumberType"><rhs name\="Constant$PhoneNumberType"/></lhs><lhs name\="Payment"><rhs name\="Payment"/></lhs><lhs name\="day5.Examination"><rhs name\="day5.Examination"/></lhs><lhs name\="day5.Subject"><rhs name\="day5.Subject"/></lhs><lhs name\="day5.PointSheetRow"><rhs name\="day5.PointSheetRow"/></lhs><lhs name\="day5.PointSheet"><rhs name\="day5.PointSheet"/></lhs><lhs name\="day5.Student"><rhs name\="day5.Student"/></lhs><lhs name\="day5.StudentClass"><rhs name\="day5.StudentClass"/></lhs><lhs name\="day5.SemesterPerformance"><rhs name\="day5.SemesterPerformance"/></lhs><lhs name\="day5.Semester"><rhs name\="day5.Semester"/></lhs><lhs name\="day5cardealer.Car"><rhs name\="day5cardealer.Car"/></lhs><lhs name\="day5cardealer.OrderDetail"><rhs name\="day5cardealer.OrderDetail"/></lhs><lhs name\="day5cardealer.Customer"><rhs name\="day5cardealer.Customer"/></lhs><lhs name\="day5cardealer.Order"><rhs name\="day5cardealer.Order"/></lhs></history>
+content_assist_number_of_computers=17
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

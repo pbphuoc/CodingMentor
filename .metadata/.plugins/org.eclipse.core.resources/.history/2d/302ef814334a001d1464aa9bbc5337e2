@@ -1,0 +1,34 @@
+import java.time.format.DateTimeFormatter;
+
+public class User {
+
+	private String ID;
+	private String password;
+	private String joiningDate;
+	private static DateTimeFormatter dateFormater = DateTimeFormatter.ofPattern("DD-MM-YYYY");
+	
+	public User(String ID, String password) {
+		this.ID = ID;
+		this.password = password;
+		this.joiningDate = java.time.LocalDate.now().format(dateFormater).toString();
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String oldPassword, String newPassword) {
+		if (oldPassword == this.password)
+			this.password = newPassword;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public String getJoiningDate() {
+		return joiningDate;
+	}
+	
+	
+}

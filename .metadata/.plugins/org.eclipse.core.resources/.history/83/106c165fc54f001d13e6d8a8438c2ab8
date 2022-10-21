@@ -1,0 +1,118 @@
+package day5;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MainDay5 {
+	static Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Semester semOne2021 = new Semester("sem012021", "2021-2022", 1);
+		Semester semTwo2021 = new Semester("sem022021", "2021-2022", 2);
+		Student phuocPham = new Student("student1", "Phuoc Pham");
+		Subject math = new Subject("subject1", "Mathematics");
+		Subject literature = new Subject("subject2", "Literature");
+		Subject english = new Subject("subject3", "English");
+		Examination math45mExam = new Examination("exam1", "45 Minutes Maths Exam", "student1", "sem012021", "subject1",
+				2, 5.5);
+		Examination mathFinalmExam = new Examination("exam2", "Final Semester Maths Exam", "student1", "sem012021",
+				"subject1", 3, 9.0);
+		Examination lit15mExam = new Examination("exam3", "15 Minutes Literature Exam ", "student1", "sem022021",
+				"subject2", 1, 3.0);
+		Examination litFinalmExam = new Examination("exam4", "Final Literature Exam", "student1", "sem022021",
+				"subject2", 3, 8.5);
+		Examination eng45mExam = new Examination("exam5", "45 Minutes English Exam", "student1", "sem022021",
+				"subject3", 2, 10.0);
+		Examination engFinalExam = new Examination("exam6", "Final Semester English Exam", "student1", "sem022021",
+				"subject3", 3, 6.5);
+		Examination[] exams = { math45mExam, mathFinalmExam, lit15mExam, lit15mExam, eng45mExam, engFinalExam };
+		Student[] students = { phuocPham };
+		Student selectedStudent = getStudent(students);
+		if (selectedStudent != null) {
+			ArrayList<Examination> examinations = getExaminationsByStudentID(selectedStudent.getStudentID(), exams);
+			ArrayList<String> semesters = getSemesterFromExamination(examinations);
+			ArrayList<String> subjects = getSubjectFromExamination(examinations);
+			ArrayList<String> schoolYears = getSchoolYearFromExamination(semesters);
+
+
+		}
+		scanner.close();
+	}
+
+	public static Student getStudent(Student[] students) {
+		for (Student s : students) {
+			System.out.println("Student ID: " + s.getStudentID() + " | Student Name: " + s.getStudentName());
+		}
+		while (true) {
+			System.out.print("Please enter either Student ID or Student Name you want to view student's Point Sheet: ");
+			String studentID = scanner.nextLine();
+			for (Student s : students) {
+				if (studentID.equalsIgnoreCase(s.getStudentID()) || studentID.equalsIgnoreCase(s.getStudentName())) {
+					return s;
+				}
+			}
+			System.out.println("Cannot find the entered Student ID or Student Name in our system. Please try again");
+		}
+	}
+
+	public static ArrayList<Examination> getExaminationsByStudentID(String studentID, Examination[] exams) {
+		ArrayList<Examination> examninations = new ArrayList<Examination>();
+		for (Examination e : exams) {
+			if (studentID.equalsIgnoreCase(e.getStudentID()))
+				examninations.add(e);
+		}
+		return examninations;
+	}
+	
+	public static ArrayList<String> getSemesterFromExamination(ArrayList<Examination> exams) {
+		ArrayList<String> semesters = new ArrayList<String>();
+		for(Examination exam : exams) {
+			if (!semesters.contains(exam.getSemesterID()))
+				semesters.add(exam.getSemesterID());
+		}
+		return semesters;
+	}
+	
+	public static ArrayList<String> getSubjectFromExamination(ArrayList<Examination> exams){
+		ArrayList<String> subjects = new ArrayList<String>();
+		for(Examination exam  : exams) {
+			if(!subjects.contains(exam.getSubjectID()))
+				subjects.add(exam.getSubjectID());
+		}
+		return subjects;
+	}
+	
+	public static ArrayList<String> getSchoolYearFromExamination(ArrayList<Semester> semesters){
+		ArrayList<String> schoolYears = new ArrayList<String>();
+		for(Semester s  : semesters) {
+			if(!schoolYears.contains(s.getSchoolYear()))
+				schoolYears.add(s.getSchoolYear());
+		}
+		return schoolYears;
+	}
+	
+	public static Semester getSmester(String semesterID, Semester[] semesters) {
+		for(Semester s : semesters) {
+			if (semesterID.equalsIgnoreCase(s.getSemesterID()))
+				return s;
+		}
+		return null;
+	}
+	
+	public static Subject getSubject(String subjectID, Subject[] subjects) {
+		for(Subject s : subjects) {
+			if(subjectID.equalsIgnoreCase(s.getSubjectID()))
+				return s;
+		}
+		return null;
+	}
+
+
+//	public static Student getStudent(Student[] students, String studentID) {
+//		for (Student student : students) {
+//			if (studentID.equalsIgnoreCase(student.getStudentID()))
+//				return student;
+//		}
+//		return null;
+//	}
+}

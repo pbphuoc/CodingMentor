@@ -1,0 +1,42 @@
+
+public class Brand {
+	private String brandID;
+	private String brandName;
+	private String email;
+	private Address officeAddress;
+	private PhoneNumber[] phoneNumbers;
+	
+	private Brand(String brandID, String brandName, String email) {
+		this.brandID = brandID;
+		this.brandName = brandName;
+		this.email = email;
+	}
+
+	public String getBrandID() {
+		return brandID;
+	}
+
+	public String getBrandName() {
+		return brandName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public Address getOfficeAddress() {
+		return officeAddress;
+	}
+
+	public PhoneNumber[] getPhoneNumbers() {
+		return phoneNumbers;
+	}
+
+	public void setOfficeAddress(Address officeAddress) {
+		this.officeAddress = officeAddress;
+	}
+
+	public void setPhoneNumbers(PhoneNumber[] phoneNumbers) {
+		this.phoneNumbers = phoneNumbers;
+	}
+}

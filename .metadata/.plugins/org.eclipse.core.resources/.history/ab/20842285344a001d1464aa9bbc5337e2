@@ -1,0 +1,24 @@
+
+public class MainDay4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		User userFrankPham = new User("FRANKPHAM", "frank$1234567");
+		User userPhuocPham = new User("phuocpham", "phuoc^9876543");
+		User userCodingMentor = new User("codingMentor", "cm@9999999");
+		User userCustomer = new User("ReGuLaRcUsToMeR", "regular*abcde");
+		User[] users = { userFrankPham, userPhuocPham, userCodingMentor, userCustomer };
+		String[] userIDS = { userFrankPham.getID(), userPhuocPham.getID(), userCodingMentor.getID(),
+				userCustomer.getID() };
+
+	}
+
+	public static boolean validateUser(String username, String[] userIDS){
+		for (String userID : userIDS) {
+			if (username == userID) 
+				return true;		
+		}
+		return false;
+	}
+
+}

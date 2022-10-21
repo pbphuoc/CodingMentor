@@ -1,0 +1,23 @@
+
+public class Shipping {
+	private String shippingID;
+	private String receiverName;
+	private Address receiverAddress;
+	private PhoneNumber receiverPhoneNumber;
+	private String shippingFee;
+	private String expectedDeliveryDate;
+	private String actualDeliveryDate;
+	
+	public Shipping(String shippingID, String receiverName, Address receiverAddress, PhoneNumber receiverPhoneNumber) {
+		this.shippingID = shippingID;
+		this.receiverName = receiverName;
+		this.receiverAddress = receiverAddress;
+		this.receiverPhoneNumber = receiverPhoneNumber;
+		this.shippingFee = calculateShippingFee();
+	}
+	
+	public void calculateShippingFee() {
+		
+	}
+
+}

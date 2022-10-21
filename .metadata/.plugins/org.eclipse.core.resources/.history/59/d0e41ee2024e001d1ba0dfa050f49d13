@@ -1,0 +1,86 @@
+package day5;
+
+import java.util.Scanner;
+
+public class MainDay5 {
+	static Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Subject math = new Subject("subject1", "Mathematics");
+		Subject literature = new Subject("subject2", "Literature");
+		Subject english = new Subject("subject3", "English");
+		Examination math45mExam = new Examination("exam1", "45 Minutes Maths Exam", math, 2, 8.0);
+		Examination mathFinalmExam = new Examination("exam2", "Final Semester Maths Exam", math, 3, 5.0);
+		Examination lit15mExam = new Examination("exam3", "15 Minutes Literature Exam ", literature, 1, 6.5);
+		Examination litFinalmExam = new Examination("exam4", "Final Literature Exam", literature, 3, 7.5);
+		Examination eng45mExam = new Examination("exam5", "45 Minutes English Exam", english, 2, 10.0);
+		Examination engFinalExam = new Examination("exam6", "Final Semester English Exam", english, 3, 4.0);
+		PointSheetRow mathPoints = new PointSheetRow("row1", new Examination[] { math45mExam, mathFinalmExam }, math);
+		PointSheetRow litPoints = new PointSheetRow("row2", new Examination[] { lit15mExam, litFinalmExam },
+				literature);
+		PointSheetRow engPoints = new PointSheetRow("row2", new Examination[] { eng45mExam, engFinalExam }, english);
+		PointSheet pointSheet = new PointSheet("pointSheet1", new PointSheetRow[] { mathPoints, engPoints, litPoints });
+		StudentClass class10A4 = new StudentClass("studentClass1", "Class 10A4", null, null);
+		Student phuocPham = new Student("student1", "Phuoc Pham", null);
+		SemesterPerformance semesterPerformance = new SemesterPerformance("performance1", phuocPham, pointSheet);
+		SemesterPerformance[] performances = { semesterPerformance };
+		Semester semester2022A = new Semester("semester2022A", "2022", "1st Jan", performances);
+		Semester[] semesters = { semester2022A };
+
+		scanner.close();
+	}
+
+	public static SemesterPerformance[] getSemesterPerformance(Semester[] semesters) {
+		String year;
+		String date;
+		for (Semester semester : semesters) {
+			System.out.println(
+					"Semester Year: " + semester.getSemesterYear() + " - Semester Date: " + semester.getSemesterDate());
+		}
+		System.out.print("Please enter Semester Year you want to view: ");
+		year = scanner.nextLine();
+		System.out.print("Please enter Semester Date you want to view: ");
+		date = scanner.nextLine();
+		for (Semester semester : semesters) {
+			if (year.equalsIgnoreCase(semester.getSemesterYear()) && date.equalsIgnoreCase(semester.getSemesterDate()))
+				return semester.getPerformances();
+		}
+		System.out.println("Cannot find the entered Semester Year and Date in our system");
+		return null;
+	}
+
+	public static PointSheet getPointSheet(SemesterPerformance[] performances) {
+		String studentID;
+		for (SemesterPerformance performance : performances) {
+			System.out.println("Student ID: " + performance.getStudent().getStudentID() + " - Student Name: "
+					+ performance.getStudent().getStudentName() + " - Student Class: "
+					+ performance.getStudent().getStudentClass());
+		}
+		System.out.print("Please enter either Student ID or Student Name you want to view student's Point Sheet");
+		studentID = scanner.nextLine();
+		for (SemesterPerformance performance : performances) {
+			if (studentID.equalsIgnoreCase(performance.getStudent().getStudentID())
+					|| studentID.equalsIgnoreCase(performance.getStudent().getStudentName()))
+				return performance.getPointSheet();
+		}
+		System.out.println("Cannot find the entered Student ID or Student Name in our system");
+		return null;
+	}
+
+	public static void viewPointSheet(PointSheet pointSheet) {
+		for (PointSheetRow pointSheetRow : pointSheet.getPointSheetRows()) {
+			System.out.println("Subject: " + pointSheetRow.getSubject().getSubjectName());
+			for (Examination examination : pointSheetRow.getAssessments()) {
+				System.out.println("Exam: " + examination.get);
+			}
+		}
+	}
+
+	public static Student getStudent(Student[] students, String studentID) {
+		for (Student student : students) {
+			if (studentID.equalsIgnoreCase(student.getStudentID()))
+				return student;
+		}
+		return null;
+	}
+}

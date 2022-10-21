@@ -1,0 +1,6 @@
+
+public class Constant {
+	enum Category{
+		
+	}
+}

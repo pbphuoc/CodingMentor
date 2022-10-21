@@ -1,0 +1,9 @@
+package day5;
+
+public class StudentClass {
+	private String classID;
+	private String className;
+	private String primaryTeacher;
+	
+	
+}

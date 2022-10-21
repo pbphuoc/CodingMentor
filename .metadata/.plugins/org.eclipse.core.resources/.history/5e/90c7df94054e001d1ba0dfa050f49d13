@@ -1,0 +1,16 @@
+package day5cardealer;
+
+public class Car {
+	private String name;
+	private String speed;
+	private String colour;
+	private double height;
+	private double weight;
+	private double price;
+	
+	public Car(String name, String speed, String colour, double height, double weight, double price) {
+		this.name = name;
+		this.speed = speed;
+		this
+	}
+}

@@ -1,0 +1,11 @@
+
+public class Product {
+	private String productID;
+	private String productName;
+	private Category productCategory;
+	private Brand productBrand;
+	private String productPrice;
+	private String productKeyword;
+	
+	public Product(String productID, String productName, Category productCategory)
+}

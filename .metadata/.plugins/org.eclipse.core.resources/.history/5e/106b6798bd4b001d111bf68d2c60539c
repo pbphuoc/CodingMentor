@@ -1,0 +1,40 @@
+import java.time.format.DateTimeFormatter;
+
+public class Payment {
+	private String paymentDate;
+	private Constant.PaymentType paymentType;
+	private String amount;
+	private Address billingAddress;;
+	private Constant.PaymentStatus paymentStatus = Constant.PaymentStatus.PENDING;
+
+	public Payment(Constant.PaymentType paymentType, String amount) {
+		this.paymentType = paymentType;
+		this.amount = amount;
+	}
+	
+	public String getPaymentDate() {
+		return paymentDate;
+	}
+
+	public Constant.PaymentType getPaymentType() {
+		return paymentType;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public Address getBillingAddress() {
+		return billingAddress;
+	}
+
+	public Constant.PaymentStatus getPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(Constant.PaymentStatus paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+	
+	
+}

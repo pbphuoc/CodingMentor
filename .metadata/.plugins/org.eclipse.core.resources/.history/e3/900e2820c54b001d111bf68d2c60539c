@@ -1,0 +1,20 @@
+
+public class CartDetail {
+	private Product product;
+	private Integer quantity;
+	private String subTotal;
+
+	public CartDetail(Product product, Integer quantity) {
+		this.product = product;
+		this.quantity = quantity;
+		this.subTotal =  "" + (Double.parseDouble(product.getProductPrice()) * quantity);
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+}

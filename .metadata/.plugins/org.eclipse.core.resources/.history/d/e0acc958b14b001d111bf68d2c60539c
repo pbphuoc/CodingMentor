@@ -1,0 +1,6 @@
+
+public class OrderDetail {
+//	private String orderID;
+	private Product product;
+	private Integer quantity;
+}

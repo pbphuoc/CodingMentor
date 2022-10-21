@@ -1,0 +1,12 @@
+package day5;
+
+public class Examination {
+	private String examID;
+	private Subject subject;
+	private double multiplication;
+	private double point;
+
+	public Examination(String examID, Subject subject, double multiplication, double point) {
+
+	}
+}

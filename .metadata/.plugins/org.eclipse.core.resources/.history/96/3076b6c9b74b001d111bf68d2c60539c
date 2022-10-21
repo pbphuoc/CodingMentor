@@ -1,0 +1,14 @@
+
+public class Brand {
+	private String brandID;
+	private String brandName;
+	private String email;
+	private Address officeAddress;
+	private PhoneNumber[] phoneNumbers;
+	
+	private Brand(String brandID, String brandName, String email) {
+		this.brandID = brandID;
+		this.brandName = brandName;
+		this.email = email;
+	}
+}

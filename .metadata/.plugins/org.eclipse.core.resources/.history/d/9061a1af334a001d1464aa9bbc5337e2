@@ -1,0 +1,12 @@
+
+public class MainDay4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		User userFrankPham = new User("FRANKPHAM", "frank$1234567");
+		User userPhuocPham = new User("phuocpham", "phuoc^9876543");
+		User userCodingMentor = new User("codingMentor", "cm@9999999");
+
+	}
+
+}

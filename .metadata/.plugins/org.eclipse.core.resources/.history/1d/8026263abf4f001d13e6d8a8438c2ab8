@@ -1,0 +1,41 @@
+package day5;
+
+public class Examination {
+	private String examID;
+	private String examName;
+	private String studentID;
+	private String semesterID;
+	private String subjectID;
+	private double point;
+	private double multiplication;
+
+	public Examination(String examID, String examName, String studentID, String semesterID, String subjectID, double point, double multiplication) {
+		this.examID = examID;
+		this.examName = examName;
+		this.studentID = studentID;
+		this.semesterID = semesterID;
+		this.subjectID = subjectID;
+		this.point = point;
+		this.multiplication = multiplication;
+	}
+
+	public double getMultiplication() {
+		return multiplication;
+	}
+
+	public String getExamName() {
+		return examName;
+	}
+
+	public String getExamID() {
+		return examID;
+	}
+
+	public String getSemesterID() {
+		return semesterID;
+	}
+
+	public String getSubjectID() {
+		return subjectID;
+	}
+}

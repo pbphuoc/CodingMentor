@@ -1,0 +1,13 @@
+import java.time.format.DateTimeFormatter;
+
+public class User {
+
+	private String ID;
+	private String joiningDate;
+	private static DateTimeFormatter dateFormater = DateTimeFormatter.ofPattern("DD-MM-YYYY");
+	
+	public User(String ID) {
+		this.ID = ID;
+		this.joiningDate = java.time.LocalDate.now().format(dateFormater).toString();
+	}
+}

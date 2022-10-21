@@ -1,0 +1,10 @@
+
+public class Billing {
+	private Order order;
+	private User customer;
+	
+	public Billing (Order order, User customer) {
+		this.order = order;
+		this.customer = customer;
+	}
+}

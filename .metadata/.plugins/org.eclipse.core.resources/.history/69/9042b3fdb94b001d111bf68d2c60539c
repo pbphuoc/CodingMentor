@@ -1,0 +1,45 @@
+import java.time.format.DateTimeFormatter;
+
+public class Billing {
+	private Cart cart;
+	private User customer;
+	private String paymentDate;
+	private Constant.PaymentType paymentType;
+	private String amount;
+	private Address billingAddress;
+	private static DateTimeFormatter dateFormater = DateTimeFormatter.ofPattern("DD-MM-YYYY");
+	
+	public Billing(Cart cart, User customer, Constant.PaymentType paymentType, String amount) {
+		this.cart = cart;
+		this.customer = customer;
+		this.paymentDate = java.time.LocalDate.now().format(dateFormater).toString();
+		this.paymentType = paymentType;
+		this.amount = amount;
+		this.billingAddress = customer.getAddress();
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public User getCustomer() {
+		return customer;
+	}
+
+	public String getPaymentDate() {
+		return paymentDate;
+	}
+
+	public Constant.PaymentType getPaymentType() {
+		return paymentType;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public Address getBillingAddress() {
+		return billingAddress;
+	}
+	
+}

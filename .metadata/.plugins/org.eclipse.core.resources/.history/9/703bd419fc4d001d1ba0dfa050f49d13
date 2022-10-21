@@ -1,0 +1,31 @@
+package day5;
+
+public class Student {
+	private String studentID;
+	private String studentName;
+	private StudentClass studentClass;
+	private PointSheet pointSheet;
+
+	public Student(String studentID, String studentName, StudentClass studentClass, PointSheet pointSheet) {
+		this.studentID = studentID;
+		this.studentName = studentName;
+		this.studentClass = studentClass;
+		this.pointSheet = pointSheet;
+	}
+
+	public String getStudentID() {
+		return studentID;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public StudentClass getStudentClass() {
+		return studentClass;
+	}
+
+	public PointSheet getPointSheet() {
+		return pointSheet;
+	}
+}

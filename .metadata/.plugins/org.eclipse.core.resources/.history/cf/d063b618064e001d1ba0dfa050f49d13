@@ -1,0 +1,13 @@
+package day5cardealer;
+
+public class MainCarDealer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car carCamry = new Car("Camry Atlise 2022", "Slow", "Blue", 1.1, 250.0, 30000.0);
+		Car carHonda = new Car("Honda Accord 2020", "Average", "Black", 1.15, 265.5, 57650.0);
+		
+
+	}
+
+}

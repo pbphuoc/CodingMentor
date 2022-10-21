@@ -1,0 +1,10 @@
+package day5cardealer;
+
+public class MainCarDealer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

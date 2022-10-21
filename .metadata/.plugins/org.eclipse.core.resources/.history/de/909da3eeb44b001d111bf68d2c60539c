@@ -1,0 +1,18 @@
+
+public class Billing {
+	private Order order;
+	private User customer;
+	
+	public Billing (Order order, User customer) {
+		this.order = order;
+		this.customer = customer;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public User getCustomer() {
+		return customer;
+	}
+}

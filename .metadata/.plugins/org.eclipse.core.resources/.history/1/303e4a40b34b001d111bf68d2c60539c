@@ -1,0 +1,16 @@
+public class Constant {
+	enum Category{
+		CARD,
+		GIFTWARE,
+		STATIONERY,
+		BOOK,
+		NEWSPAPERS,
+		MAGAZINE
+	}
+	
+	enum PaymentType{
+		CARD,
+		COD,
+		TRANSFER
+	}
+}

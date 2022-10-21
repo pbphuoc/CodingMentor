@@ -1,0 +1,39 @@
+
+public class Cart {
+	private String cartID;
+	private CartDetail[] cartDetails;
+	private String total;
+
+	public Cart(String cartID, CartDetail[] cartDetails) {
+		this.cartID = cartID;
+		this.cartDetails = cartDetails;
+	}
+
+	public String getOrderID() {
+		return cartID;
+	}
+
+	public CartDetail[] getCartDetails() {
+		return cartDetails;
+	}
+
+	public void addMoreCardDetail(CartDetail newDetail) {
+		CartDetail[] newDetails = new CartDetail[cartDetails.length + 1];
+		for (int i = 0; i < cartDetails.length; i++) {
+			newDetails[i] = cartDetails[i];
+		}
+		newDetails[cartDetails.length] = newDetail;
+		cartDetails = newDetails;
+	}
+
+	public void updateAmount() {
+		double temp = 0;
+		for (CartDetail cartDetail : cartDetails) {
+			int quantity = cartDetail.getQuantity();
+			double price = Double.parseDouble(cartDetail.getProduct().getProductPrice());
+			double subTotal = quantity * price;
+			temp += subTotal;
+		}
+		total = temp + "";
+	}
+}

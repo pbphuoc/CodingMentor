@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class MainDay4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		User userFrankPham = new User("FRANKPHAM", "frank$1234567");
+		User userPhuocPham = new User("phuocpham", "phuoc^9876543");
+		User userCodingMentor = new User("codingMentor", "cm@9999999");
+		User userCustomer = new User("ReGuLaRcUsToMeR", "regular*abcde");
+		User[] users = { userFrankPham, userPhuocPham, userCodingMentor, userCustomer };
+//		String[] userIDS = { userFrankPham.getID(), userPhuocPham.getID(), userCodingMentor.getID(),
+//				userCustomer.getID() };
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Welcome to our Coding Mentor shop. Please enter your Username and Password to login:");
+		while (true) {
+			System.out.print("Username: ");
+			String username = scanner.nextLine();
+			System.out.print("Password: ");
+			String password = scanner.nextLine();
+			if (authenticateUser(users, username, password)) {
+				System.out.println("Login succesfully!");
+				break;
+			} else {
+				System.out.println("Incorrect Username or Password. Please try again");
+			}
+		}
+
+	}
+
+	public static boolean authenticateUser(User[] users, String username, String password) {
+		for (User user : users) {
+			if (username.toLowerCase() == user.getID()) {
+				if (password == user.getPassword())
+					return true;
+				else
+					return false;
+			}
+		}
+		return false;
+	}
+
+}

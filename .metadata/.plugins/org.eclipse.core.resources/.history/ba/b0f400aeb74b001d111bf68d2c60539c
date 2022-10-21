@@ -1,0 +1,9 @@
+
+public class Brand {
+	private String brandID;
+	private String brandName;
+	private Address officeAddress;
+	private PhoneNumber[] phoneNumbers;
+	
+
+}

@@ -1,0 +1,19 @@
+
+public class Billing {
+	private Cart order;
+	private User customer;
+	private 
+	
+	public Billing (Cart order, User customer) {
+		this.order = order;
+		this.customer = customer;
+	}
+
+	public Cart getOrder() {
+		return order;
+	}
+
+	public User getCustomer() {
+		return customer;
+	}
+}

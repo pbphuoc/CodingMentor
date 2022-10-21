@@ -1,0 +1,10 @@
+public class Constant {
+	enum Category{
+		CARD,
+		GIFTWARE,
+		STATIONERY,
+		BOOK,
+		NEWSPAPERS,
+		MAGAZINE
+	}
+}

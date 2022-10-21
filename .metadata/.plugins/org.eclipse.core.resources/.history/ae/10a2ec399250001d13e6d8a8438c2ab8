@@ -1,0 +1,7 @@
+package day5;
+
+public class Teacher {
+	private String teacherID;
+	private String teacherName;
+	private double salary;
+}

@@ -1,0 +1,22 @@
+package day5cardealer;
+
+public class MainCarDealer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car carCamry = new Car("Camry Atlise 2022", "Slow", "Blue", 1.1, 250.0, 30000.0);
+		Car carHonda = new Car("Honda Accord 2020", "Average", "Black", 1.15, 265.5, 57650.0);
+		Car carMercedes = new Car("Merc C200 2019", "Quite Fast", "Silver", 1.0, 280.0, 68000.0);
+		OrderDetail detail1 = new OrderDetail(carCamry, 5);
+		OrderDetail detail2 = new OrderDetail(carHonda, 3);
+		OrderDetail detail3 = new OrderDetail(carMercedes, 10);
+		Customer phuocPham = new Customer("Phuoc Pham");
+		Order order = new Order(phuocPham, new OrderDetail[] { detail1, detail2, detail3 });
+		Order[] orders = {order};
+	}
+	
+	public static viewCustomerOrder(Customer customer, Order[] orders) {
+		for(Customer c : orders.get) {
+	}
+	
+}

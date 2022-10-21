@@ -1,0 +1,16 @@
+package day5;
+
+import java.sql.Date;
+
+public class Semester {
+	private String semesterID;
+	private String semesterDate;
+	private SemesterPerformance[] performances;
+	
+	public Semester(String semesterID, String semesterDate, SemesterPerformance[] performances) {
+		this.semesterID = semesterID;
+		this.semesterDate = semesterDate;
+		this.performances = performances;
+	}
+	
+}
