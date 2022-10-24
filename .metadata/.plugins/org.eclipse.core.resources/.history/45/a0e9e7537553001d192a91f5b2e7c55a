@@ -11,7 +11,7 @@ public class BookStoreService {
 	Scanner scanner = new Scanner(System.in);
 
 	public String getBorrowStatus(BorrowReturnHistory borrowReturnHistory) {
-		LocalDate todayDate = LocalDate.parse(LocalDate.now().format(formatter), formatter);
+		LocalDate todayDate = LocalDate.parse("24-10-2022", formatter);
 		LocalDate expectedReturnDate = LocalDate.parse(borrowReturnHistory.getExpectedReturnDate(), formatter);
 
 		if (borrowReturnHistory.getActualReturnDate().equalsIgnoreCase("")) {

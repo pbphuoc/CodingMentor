@@ -1,7 +1,0 @@
-package day6;
-
-public class BookStoreService {
-	public String getBorrowStatus(ArrayList<BorrowReturnHistory> borrowReturnHistories) {
-		
-	}
-}
