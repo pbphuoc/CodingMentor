@@ -55,4 +55,6 @@
     <fullyQualifiedTypeName name="day6.BorrowReturnHistory"/>
     <fullyQualifiedTypeName name="day6.BookStoreDataSource"/>
     <fullyQualifiedTypeName name="day6.BookStoreService"/>
+    <fullyQualifiedTypeName name="day7.BookStoreService"/>
+    <fullyQualifiedTypeName name="day7.BookStoreDataSource"/>
 </qualifiedTypeNameHistroy>
