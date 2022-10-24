@@ -49,8 +49,8 @@ public class BookStoreService {
 				if (history.getCustomerID().equalsIgnoreCase(customer.getCustomerID())) {
 					Book b = getBookByISBN(books, history.getISBN());
 					String bookTypes = getBookTypeByISBN(booktypes, types, history.getISBN());
-					System.out.printf(format, customer.getCustomerName(), b.getName(), b.getAuthor(), bookTypes, history
-							.getBorrowDate(), history.getExpectedReturnDate(), history.getActualReturnDate(),
+					System.out.printf(format, customer.getCustomerName(), b.getName(), b.getAuthor(), bookTypes,
+							history.getBorrowDate(), history.getExpectedReturnDate(), history.getActualReturnDate(),
 							getBorrowStatus(history));
 				}
 			}
