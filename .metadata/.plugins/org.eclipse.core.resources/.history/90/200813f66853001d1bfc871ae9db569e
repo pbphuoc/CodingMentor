@@ -1,0 +1,33 @@
+package day6;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+public class BookStoreService {
+	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	
+	public String getBorrowStatus(BorrowReturnHistory borrowReturnHistory) {
+		LocalDate todayDate = LocalDate.parse(LocalDate.now().toString(), formatter);
+		LocalDate expectedReturnDate = LocalDate.parse(borrowReturnHistory.getExpectedReturnDate(), formatter);
+		
+		if(borrowReturnHistory.getActualReturnDate().equalsIgnoreCase("")) {
+			if(todayDate.isAfter(expectedReturnDate))
+				return "Overdue";
+			else
+				return "Borrowed";
+		}else {
+			LocalDate actualReturnDate = LocalDate.parse(borrowReturnHistory.getActualReturnDate(), formatter);
+			if(actualReturnDate.isAfter(expectedReturnDate))
+				return "Late Return";
+			else
+				return "Returned";
+		}
+	}
+	
+	public ArrayList<BorrowReturnHistory> getBorrowListByCustomerID(ArrayList<BorrowReturnHistory> borrowRefurnHistories, String customerID){
+		ArrayList<BorrowReturnHistory> records = new ArrayList<BorrowReturnHistory>();
+		
+		return records;
+	}
+}

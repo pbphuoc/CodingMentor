@@ -1,0 +1,21 @@
+package day6;
+
+import java.util.ArrayList;
+
+public class BookStoreDataSource{
+	private ArrayList<Location> locations = new ArrayList<Location>();
+	private ArrayList<Stock> stocks = new ArrayList<Stock>();
+	private ArrayList<Book> books = new ArrayList<Book>();
+	private ArrayList<BookType> bookTypes = new ArrayList<BookType>();
+	private ArrayList<Type> types = new ArrayList<Type>();
+	private ArrayList<BorrowReturnHistory> borrowReturnHistories = new ArrayList<BorrowReturnHistory>();
+	private ArrayList<Customer> customers = new ArrayList<Customer>();
+	
+	public BookStoreDataSource() {
+		Type typeTieuThuyet = new Type("type1", "Tieu Thuyet");
+		Type typeVanHoc = new Type("type2", "Van Hoc");
+		Type typeKyNangSong = new Type("type3" , "Ky Nang Song");
+		Book bookA = new Book("bookA", "Nha Gia Kim", "Paulo Coelho");
+		
+	}
+}

@@ -1,0 +1,14 @@
+package day6;
+
+public class BorrowReturnHistory {
+	private String customerID;
+	private String ISBN;
+	private String borrowDate;
+	private String returnDate;
+	
+	public BorrowReturnHistory(String customerID, String ISBN, String borrowDate) {
+		this.customerID = customerID;
+		this.ISBN = ISBN;
+		this.borrowDate = borrowDate;
+	}
+}

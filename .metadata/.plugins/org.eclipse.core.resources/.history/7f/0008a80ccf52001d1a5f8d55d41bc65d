@@ -1,0 +1,14 @@
+package day6;
+
+public class Book {
+	private String ISBN;
+	private String name;
+	private String author;
+	private String typeID;
+	public Book(String ISBN, String name, String author, String typeID) {
+		this.ISBN = ISBN;
+		this.name = name;
+		this.author = author;
+		this.typeID = typeID;
+	}
+}
