@@ -2,6 +2,7 @@ package day7;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BookStoreService {
@@ -27,15 +28,15 @@ public class BookStoreService {
 		}
 	}
 
-//	public ArrayList<BorrowReturnHistory> getBorrowListByCustomerID(
-//			ArrayList<BorrowReturnHistory> borrowRefurnHistories, String customerID) {
-//		ArrayList<BorrowReturnHistory> records = new ArrayList<BorrowReturnHistory>();
-//		for (BorrowReturnHistory record : borrowRefurnHistories) {
-//			if (record.getCustomerID().equalsIgnoreCase(customerID))
-//				records.add(record);
-//		}
-//		return records;
-//	}
+	public ArrayList<BorrowReturnHistory> getBorrowListByCustomerID(
+			ArrayList<BorrowReturnHistory> borrowRefurnHistories, String customerID) {
+		ArrayList<BorrowReturnHistory> records = new ArrayList<BorrowReturnHistory>();
+		for (BorrowReturnHistory record : borrowRefurnHistories) {
+			if (record.getCustomerID().equalsIgnoreCase(customerID))
+				records.add(record);
+		}
+		return records;
+	}
 
 	public void showBorrowListByAllCustomer() {
 		String format = "%-15s %-35s %-30s %-30s %-15s %-15s %-15s %-15s\n";
@@ -44,10 +45,10 @@ public class BookStoreService {
 		for (Customer customer : BookStoreDataSource.customers) {
 			for (BorrowReturnHistory history : BookStoreDataSource.borrowReturnHistories) {
 				if (history.getCustomerID().equalsIgnoreCase(customer.getCustomerID())) {
-					Book b = getBookByISBN(history.getISBN());
+					Book b = getBookByISBN(BookStoreDataSource.books, history.getISBN());
 					String bookTypes = getBookTypeByISBN(history.getISBN());
-					System.out.printf(format, customer.getCustomerName(), b.getName(), b.getAuthor(), bookTypes,
-							history.getBorrowDate(), history.getExpectedReturnDate(), history.getActualReturnDate(),
+					System.out.printf(format, customer.getCustomerName(), b.getName(), b.getAuthor(), bookTypes, history
+							.getBorrowDate(), history.getExpectedReturnDate(), history.getActualReturnDate(),
 							getBorrowStatus(history));
 				}
 			}
@@ -62,8 +63,8 @@ public class BookStoreService {
 //		return null;
 //	}
 
-	public Book getBookByISBN(String ISBN) {
-		for (Book book : BookStoreDataSource.books) {
+	public Book getBookByISBN(ArrayList<Book> books, String ISBN) {
+		for (Book book : books) {
 			if (ISBN.equalsIgnoreCase(book.getISBN()))
 				return book;
 		}

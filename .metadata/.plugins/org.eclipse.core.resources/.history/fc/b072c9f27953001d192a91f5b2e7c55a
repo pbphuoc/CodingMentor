@@ -11,7 +11,7 @@ public class BookStoreDataSource {
 	public static ArrayList<BorrowReturnHistory> borrowReturnHistories = new ArrayList<BorrowReturnHistory>();
 	public static ArrayList<Customer> customers = new ArrayList<Customer>();
 
-	public static void loadDataSource() {
+	public BookStoreDataSource() {
 		Type typeTieuThuyet = new Type("type1", "Tieu Thuyet");
 		Type typeVanHoc = new Type("type2", "Van Hoc");
 		Type typeKyNangSong = new Type("type3", "Ky Nang Song");
@@ -49,4 +49,25 @@ public class BookStoreDataSource {
 		borrowReturnHistories.add(borrowReturn4);
 		borrowReturnHistories.add(borrowReturn5);
 	}
+
+	public ArrayList<Book> getBooks() {
+		return books;
+	}
+
+	public ArrayList<BookType> getBookTypes() {
+		return bookTypes;
+	}
+
+	public ArrayList<Type> getTypes() {
+		return types;
+	}
+
+	public ArrayList<BorrowReturnHistory> getBorrowReturnHistories() {
+		return borrowReturnHistories;
+	}
+
+	public ArrayList<Customer> getCustomers() {
+		return customers;
+	}
+
 }
