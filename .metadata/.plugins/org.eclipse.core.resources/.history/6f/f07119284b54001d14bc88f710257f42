@@ -17,7 +17,7 @@ public class BookStoreDataSource {
 	public static ArrayList<BorrowReturnHistory> borrowReturnHistories = new ArrayList<BorrowReturnHistory>();
 	public static ArrayList<Customer> customers = new ArrayList<Customer>();
 
-	static  {
+	public static void loadDataSource() {
 		Type typeTieuThuyet = new Type("type1", "Tieu Thuyet");
 		Type typeVanHoc = new Type("type2", "Van Hoc");
 		Type typeKyNangSong = new Type("type3", "Ky Nang Song");
