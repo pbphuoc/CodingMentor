@@ -1,0 +1,155 @@
+package day8.main;
+
+import day8.romantoint.RomanToInt;
+import day8.squareroot.SquareRoot;
+
+public class MainDay8 {
+
+	public static void main(String[] args) {
+		//RomanToInt : O(n)
+		RomanToInt.demo();
+		//SquareRoot : O(log2(N))
+		SquareRoot.demo();
+	
+	}
+	
+	
+	public static void doGetMatchedStringExample() {
+		String[] strs1 = {"flower", "flow", "flight"};
+		String[] strs2 = {"dog", "racecar", "car"};
+		
+		System.out.print("String 1: ");
+		for(String str: strs1) {
+			System.out.print(str + " ");
+		}
+		System.out.println();
+		System.out.println("longest matched string: " + getMatchedString(strs1));
+		System.out.print("String 2: ");
+		for(String str: strs2) {
+			System.out.print(str + " ");
+		}
+		System.out.println();
+		System.out.println("longest matched string: " + getMatchedString(strs2));			
+	}
+	
+	public static void doSortExample() {
+		int[] numArr = {1,2,2,0,0,1,2,2,1};
+		System.out.print("Original array: ");
+		for(int num: numArr) {
+			System.out.print(num + " ");
+		}
+		System.out.println();
+		System.out.print("Sorted array: ");
+		for(int num: sortArray(numArr)) {
+			System.out.print(num + " ");
+		}		
+	}
+
+
+	
+	
+	
+	/*
+	 * words.length = N
+	 * the idea is to keep dividing N element until we have either 1 pair of strings left (compare those 2 strings) or 1 single string left (return that whole string)
+	 * if some of the prefix letters in those 2 match, we return the prefix letters; we return immediately as soon as a non-matched character is found; if 0 character matched, return ""
+	 * N: call getMatchedString 1 time N0
+	 * N/2 N/2: call getMatchedString 2 times N1
+	 * N/4 N/4 N/4 N/4: call getMatchedString 4 times N2
+	 * N/8 N/8 N/8 N/8 N/8 N/8 N/8 N/8: call getMatchedString 8 times N3
+	 * ...
+	 * N/N: call getMatchedString N times
+	 * so after log2(N) times, N is divided into N/N and it takes 2^0 + 2^1 + ... N/2 steps to call getMatchedString
+	 * and for each pair created, it takes 1 step to call compare2String, so total it will take 2^0 + 2^1 + ... N/2 steps to call compare2String
+	 * so totally it will take 2^1 + 2^2 +... N steps to find the longest common substring in the provided string
+	*/
+	public static String getMatchedString(String[] words){
+		if(words.length == 1)
+			return words[0];
+		else if(words.length == 2){
+			return compare2String(words[0],words[1]);
+		}
+		
+		int firstHalfSize = words.length/2;
+		int secondHalfSize = words.length/2;
+		if(words.length % 2 != 0)
+			secondHalfSize += 1;
+		String[] firstHalfWords = new String[firstHalfSize];
+		String[] secondHalfWords = new String[secondHalfSize];
+		for(int i = 0; i < firstHalfSize; i++){
+			firstHalfWords[i] = words[i];
+		}
+		for(int i = 0; i < secondHalfSize; i++){
+			secondHalfWords[i] = words[i + firstHalfSize];
+		}	
+		return compare2String(getMatchedString(firstHalfWords),getMatchedString(secondHalfWords));
+	}
+
+	public static String compare2String(String a, String b){
+		if(a.equals("") || b.equals(""))
+			return "";
+		String matchedStr = "";
+		int i = 0;
+		while(i < a.length() && i < b.length()){
+			if(a.charAt(i) == b.charAt(i))
+				matchedStr += a.charAt(i);
+			else
+				break;
+			++i;
+		}
+		return matchedStr;
+	}
+	/*
+	 * given N = numbers.length, we keep dividing until we have a pair of numbers to compare, or a single number to return; 
+	 * as we need to sort 2 sub arrays later so we keep a single integer number in an array [ ]
+	 * so same as the previous exercise, it will take 2^1 + 2^2 +... N steps to divide and sort the whole array.
+	 */
+	
+	public static int[] sortArray(int[] numbers){
+		if(numbers.length == 1)
+			return numbers;
+		else if(numbers.length == 2)
+			return sortSubArrays(new int[]{numbers[0]}, new int[]{numbers[1]});
+		
+		int firstHalfSize = numbers.length / 2;
+		int secondHalfSize = numbers.length / 2;
+		if(numbers.length % 2 != 0)
+			secondHalfSize += 1;
+		int[] firstHalfNumbers = new int[firstHalfSize];
+		int[] secondHalfNumbers = new int[secondHalfSize];
+		for(int i = 0; i < firstHalfSize; i++){
+			firstHalfNumbers[i] = numbers[i];
+		}
+
+		for(int i = 0; i < secondHalfSize; i++){
+			secondHalfNumbers[i] = numbers[i + firstHalfSize];
+		}
+		return sortSubArrays(sortArray(firstHalfNumbers),sortArray(secondHalfNumbers));
+	}
+
+	public static int[] sortSubArrays(int[] first, int[] second){
+		int[] sortedNumbers = new int[first.length + second.length];
+		int currentFirstIndex = 0;
+		int currentSecondIndex = 0;
+		int currentSortedIndex = 0;
+		while(currentFirstIndex < first.length && currentSecondIndex < second.length)
+		{
+			if(first[currentFirstIndex] <= second[currentSecondIndex]){
+				sortedNumbers[currentSortedIndex++] = first[currentFirstIndex++];
+			}else{
+				sortedNumbers[currentSortedIndex++] = second[currentSecondIndex++];		
+			}
+		}
+	    
+	    while(currentFirstIndex < first.length){
+	        sortedNumbers[currentSortedIndex++] = first[currentFirstIndex++];
+	    }
+	    while(currentSecondIndex < second.length){
+	        sortedNumbers[currentSortedIndex++] = second[currentSecondIndex++];	
+	    }
+	    
+		return sortedNumbers;
+	}    	
+	
+
+}
