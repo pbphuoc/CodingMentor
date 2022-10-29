@@ -9,7 +9,7 @@ public class Sort {
 		}
 		System.out.println();
 		System.out.print("Sorted array: ");
-		for(int num: sort(numArr)) {
+		for(int num: sortArray(numArr)) {
 			System.out.print(num + " ");
 		}	
 	}

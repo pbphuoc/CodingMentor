@@ -9,7 +9,7 @@ public class Sort {
 		}
 		System.out.println();
 		System.out.print("Sorted array: ");
-		for(int num: sort(numArr)) {
+		for(int num: sortArray(numArr)) {
 			System.out.print(num + " ");
 		}	
 	}
@@ -35,10 +35,6 @@ public class Sort {
 		for(int i = 0; i < occurrence1; i++) {
 			numbers[i+occurrence0] = 1;
 		}
-		for(int i = occurrence0 + occurrence1 ; i < numbers.length; i++) {
-			numbers[i] = 2;
-		}
-		return numbers;
 	}
 	
 	//same as Longest Same String, it takes 2^0 + 2^1 + ... 2^(log2(N) - 1) step to call Sort Array

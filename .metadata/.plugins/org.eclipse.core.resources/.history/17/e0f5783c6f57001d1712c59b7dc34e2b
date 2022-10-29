@@ -9,36 +9,14 @@ public class Sort {
 		}
 		System.out.println();
 		System.out.print("Sorted array: ");
-		for(int num: sort(numArr)) {
+		for(int num: sortArray(numArr)) {
 			System.out.print(num + " ");
 		}	
 	}
 	
 	//simpler one because there's only 3 types of number in the array
 	public static int[] sort(int[] numbers) {
-		int occurrence0 = 0;
-		int occurrence1 = 0;
-		int[] sortedArr = new int[numbers.length];	
-		for(int number: numbers) {
-			switch(number) {
-				case 0:
-					++occurrence0;
-					break;
-				case 1:
-					++occurrence1;
-					break;
-			}
-		}
-		for(int i = 0; i < occurrence0; i++) {
-			numbers[i] = 0;
-		}
-		for(int i = 0; i < occurrence1; i++) {
-			numbers[i+occurrence0] = 1;
-		}
-		for(int i = occurrence0 + occurrence1 ; i < numbers.length; i++) {
-			numbers[i] = 2;
-		}
-		return numbers;
+		
 	}
 	
 	//same as Longest Same String, it takes 2^0 + 2^1 + ... 2^(log2(N) - 1) step to call Sort Array

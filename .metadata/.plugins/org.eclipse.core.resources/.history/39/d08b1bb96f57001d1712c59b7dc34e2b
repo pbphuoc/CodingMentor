@@ -13,8 +13,8 @@ public class MainDay8 {
 //		//RomanToInt : O(n)
 //		RomanToInt.demo();
 //		//LongestSameString: O(2^0 + 2^1 + ... N/2) 
-//		LongestSameString.demo();
+		LongestSameString.demo();
 //		//Sort: O(2^0 + 2^1 + ... 2^(log2(N) - 1))
-		Sort.demo();
+//		Sort.demo();
 	}
 }
