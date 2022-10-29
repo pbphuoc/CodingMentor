@@ -10,29 +10,15 @@ public class LongestSameString {
 			System.out.print(str + " ");
 		}
 		System.out.println();
-		System.out.println("longest matched string: " + getCommonPreFix(strs1));
+		System.out.println("longest matched string: " + getMatchedString(strs1));
 		System.out.print("String 2: ");
 		for(String str: strs2) {
 			System.out.print(str + " ");
 		}
 		System.out.println();
-		System.out.println("longest matched string: " + getCommonPreFix(strs2));	
+		System.out.println("longest matched string: " + getMatchedString(strs2));	
 	}
 	
-	//simple one
-	public static String getCommonPreFix(String[] strings) {
-		String commonPrefix = "";
-		if(strings.length > 1) {
-			commonPrefix = compare2String(strings[0],strings[1]);
-			for(int i = 2; i < strings.length; i++) {
-				if(commonPrefix.equalsIgnoreCase(""))
-					return commonPrefix;
-				else
-					commonPrefix = compare2String(commonPrefix, strings[i]);
-			}
-		}
-		return commonPrefix;
-	}
 	/*
 	 * words.length = N
 	 * the idea is to keep dividing N element until we have either 1 pair of strings left (compare those 2 strings) or 1 single string left (return that whole string)

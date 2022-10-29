@@ -10,16 +10,15 @@ public class LongestSameString {
 			System.out.print(str + " ");
 		}
 		System.out.println();
-		System.out.println("longest matched string: " + getCommonPreFix(strs1));
+		System.out.println("longest matched string: " + getMatchedString(strs1));
 		System.out.print("String 2: ");
 		for(String str: strs2) {
 			System.out.print(str + " ");
 		}
 		System.out.println();
-		System.out.println("longest matched string: " + getCommonPreFix(strs2));	
+		System.out.println("longest matched string: " + getMatchedString(strs2));	
 	}
 	
-	//simple one
 	public static String getCommonPreFix(String[] strings) {
 		String commonPrefix = "";
 		if(strings.length > 1) {

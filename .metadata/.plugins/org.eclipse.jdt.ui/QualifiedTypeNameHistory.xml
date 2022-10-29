@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.jcp.xml.dsig.internal.dom.Utils"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
@@ -57,4 +56,8 @@
     <fullyQualifiedTypeName name="day6.BookStoreService"/>
     <fullyQualifiedTypeName name="day7.BookStoreService"/>
     <fullyQualifiedTypeName name="day7.BookStoreDataSource"/>
+    <fullyQualifiedTypeName name="day8.romantoint.RomanToInt"/>
+    <fullyQualifiedTypeName name="day8.squareroot.SquareRoot"/>
+    <fullyQualifiedTypeName name="day8.longestsamestring.LongestSameString"/>
+    <fullyQualifiedTypeName name="day8.sort.Sort"/>
 </qualifiedTypeNameHistroy>

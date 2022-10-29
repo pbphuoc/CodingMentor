@@ -19,7 +19,6 @@ public class LongestSameString {
 		System.out.println("longest matched string: " + getCommonPreFix(strs2));	
 	}
 	
-	//simple one
 	public static String getCommonPreFix(String[] strings) {
 		String commonPrefix = "";
 		if(strings.length > 1) {
