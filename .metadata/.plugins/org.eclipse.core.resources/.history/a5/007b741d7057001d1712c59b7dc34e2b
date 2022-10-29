@@ -18,6 +18,7 @@ public class Sort {
 	public static int[] sort(int[] numbers) {
 		int occurrence0 = 0;
 		int occurrence1 = 0;
+		int[] sortedArr = new int[numbers.length];	
 		for(int number: numbers) {
 			switch(number) {
 				case 0:
@@ -28,25 +29,14 @@ public class Sort {
 					break;
 			}
 		}
-//		int currentIndex = 0;
-//		while(currentIndex < numbers.length) {
-//			if(occurrence0 > 0) {
-//				numbers[currentIndex++] = 0;
-//				--occurrence0;
-//			}else if(occurrence1 > 0) {
-//				numbers[currentIndex++] = 1;
-//				-- occurrence1;
-//			}else {
-//				numbers[currentIndex++] = 2;
-//			}
-//		}
-		for(int i = 0; i < numbers.length; i++) {
-			if(i < occurrence0) {
-				numbers[i] = 0;
-			}else if(i < occurrence0 + occurrence1) {
-				numbers[i] = 1;				
-			}else
-				numbers[i] = 2;
+		for(int i = 0; i < occurrence0; i++) {
+			numbers[i] = 0;
+		}
+		for(int i = 0; i < occurrence1; i++) {
+			numbers[i+occurrence0] = 1;
+		}
+		for(int i = occurrence0 + occurrence1 ; i < numbers.length; i++) {
+			numbers[i] = 2;
 		}
 		return numbers;
 	}
