@@ -2,7 +2,7 @@ package day9.longestsamestring;
 
 public class LongestSameStringDay9 {
 
-	public static void runLongestSameString() {
+	public static void run() {
 		String[] strings = { "flower", "flow", "flight", "flew", "flop", "fluffy", "flopper", "flute", "fun", "film" };
 		System.out.println("LONGEST SAME STRING: ");
 		System.out.println("Before sort: ");
