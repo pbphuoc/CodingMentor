@@ -1,0 +1,38 @@
+package day9.fibonacci;
+
+public class Fibonacci {
+	public static void demo() {
+		int[] arr = {0,1,2,3,4,5,6,7,8,9,10};
+		for(int num : arr) {
+			System.out.println("Fibo of " + num + " is: " + getFibonacciUsingLoop(num));
+		}
+	}
+	
+	public static int getFibonacciUsingLoop(int num) {
+		int prevFibo = 0;
+		int curFibo = 1;
+		int currentLevel = 1;
+		if (num == 0) 
+			return 0;
+		else if(num == 1)
+			return 1;
+		else
+			++currentLevel;
+		while(currentLevel <= num) {
+			int newPrevFibo = curFibo;
+			curFibo += prevFibo;
+			prevFibo = newPrevFibo;
+			++currentLevel;			
+		}
+		return curFibo;
+	}
+	
+	public static int getFibonacciUsingRecursion(int num) {
+		if(num == 0)
+			return 0;
+		else if (num == 1)
+			return 1;
+		return getFibonacciUsingLoop(num-1) + getFibonacciUsingLoop(num-2); 
+	}
+	
+}

@@ -1,0 +1,12 @@
+package day9.longestsamestring;
+
+public class LongestSameString {
+
+	public static String[] sort2StringArrs(String[] strings1, String[] strings2) {
+		
+	}
+	
+	public static String[] sortStringArr(String[] strings) {
+		
+	}
+}

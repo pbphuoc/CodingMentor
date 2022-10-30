@@ -1,0 +1,25 @@
+package day9.longestsamestring;
+
+public class LongestSameString {
+
+	public static String[] sort2StringArrs(String[] strings1, String[] strings2) {
+		
+	}
+	
+	public static String[] sortStringArr(String[] strings, int first, int mid, int last) {
+		int firstHalfSize = strings.length/2;
+		int secondHalfSize = strings.length/2;
+		if(strings.length % 2 != 0)
+			secondHalfSize += 1;
+		String[] firstHalfWords = new String[firstHalfSize];
+		String[] secondHalfWords = new String[secondHalfSize];	
+		for(int i = 0; i < firstHalfSize; i++){
+			firstHalfWords[i] = strings[i];
+		}
+		for(int i = 0; i < secondHalfSize; i++){
+			secondHalfWords[i] = strings[i + firstHalfSize];
+		}
+		
+		return null;
+	}
+}

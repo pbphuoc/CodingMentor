@@ -1,0 +1,49 @@
+package day9.longestsamestring;
+
+public class LongestSameString {
+
+	public static String[] sort2StringArrs(String[] strings1, String[] strings2) {
+		
+	}
+	
+	public static void compareAndSwap(String
+			[]strings, int firstWordIndex, int secondWordIndex) {
+		if(strings[firstWordIndex].compareTo(strings[secondWordIndex]) > 0) {
+			String temp = strings[firstWordIndex];
+			strings[firstWordIndex] = strings[secondWordIndex];
+			strings[secondWordIndex] = temp;
+			
+		}	
+	}
+	
+	public static void mergeStringArr(String[] strings, int first, int middle, int last) {
+		int 
+		int currentFirstHalfIndex = first;
+		int currentSecondHalfIndex = middle + 1;
+		while(currentFirstHalfIndex <= middle && currentSecondHalfIndex <= last) {
+			if(strings[currentFirstHalfIndex].compareTo(strings[currentSecondHalfIndex]) > 0) {
+				swap2String(strings, currentFirstHalfIndex, currentSecondHalfIndex);
+				
+			}
+		}
+	}
+	
+	public static void sortStringArr(String[] strings, int first, int last) {
+		if(first == last - 1)
+		{
+			compareAndSwap(strings,first,last);
+		}else if(first < last) {
+			sortStringArr(strings, first, (first+last)/2);
+			sortStringArr(strings, 1 + (first+last)/2, last);
+			mergeStringArr(strings, first, (first+last)/2, last);
+		}
+
+	}
+}
+
+
+3 4		1 9
+1 4		3 9
+
+3 9		1 4
+1 9		3 4
