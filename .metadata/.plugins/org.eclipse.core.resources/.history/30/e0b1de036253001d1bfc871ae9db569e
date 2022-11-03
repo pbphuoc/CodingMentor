@@ -1,7 +1,0 @@
-package day6;
-
-import java.util.ArrayList;
-
-public class BookStoreDataSource{
-	private ArrayList<Location> locations = new ArrayList<Location>();
-}
