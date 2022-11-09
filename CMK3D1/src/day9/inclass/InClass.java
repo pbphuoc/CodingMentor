@@ -11,7 +11,7 @@ public class InClass {
 		return -1;
 	}
 	
-	//binary search
+	//binary search (only applied to sorted arrays)
 	public static int findIndex(int value, int[] arr) {
 		int upperIndex = arr.length - 1;
 		int lowerIndex = 0;
