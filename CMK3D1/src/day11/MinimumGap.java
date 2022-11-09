@@ -23,7 +23,6 @@ public class MinimumGap {
         	if(gapArr[list.get(i)] != 0) {
                 newMin = i - gapArr[list.get(i)];
                 curMin = (newMin < curMin || curMin == 0) ? newMin : curMin;
-                gapArr[list.get(i)] = i;
         	}
         	gapArr[list.get(i)] = i;
         }
@@ -31,24 +30,24 @@ public class MinimumGap {
         return curMin;
     }
     
-    public static int minimumGap2(List<Integer> list){
-        ArrayList<Integer> gapArr = new ArrayList<Integer>();
-        int curMin = 0;
-        int newMin = 0;
-        int gapArrIndex = 0;
-       
-        for(int i = 0; i < list.size(); i++){
-            gapArrIndex = gapArr.indexOf(list.get(i));
-            if(gapArrIndex != -1){
-                newMin = i - gapArrIndex;
-                curMin = (newMin < curMin || curMin == 0) ? newMin : curMin;
-                gapArr.remove(gapArrIndex);
-            }else{
-                gapArr.add(i,list.get(i));
-            }
-           
-        }
-        return curMin;
-    }    
+//    public static int minimumGap2(List<Integer> list){
+//        ArrayList<Integer> gapArr = new ArrayList<Integer>();
+//        int curMin = 0;
+//        int newMin = 0;
+//        int gapArrIndex = 0;
+//       
+//        for(int i = 0; i < list.size(); i++){
+//            gapArrIndex = gapArr.indexOf(list.get(i));
+//            if(gapArrIndex != -1){
+//                newMin = i - gapArrIndex;
+//                curMin = (newMin < curMin || curMin == 0) ? newMin : curMin;
+//                gapArr.remove(gapArrIndex);
+//            }else{
+//                gapArr.add(i,list.get(i));
+//            }
+//           
+//        }
+//        return curMin;
+//    }    
 
 }
