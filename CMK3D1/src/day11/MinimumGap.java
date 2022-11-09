@@ -9,9 +9,9 @@ import java.util.List;
 public class MinimumGap {
 
     public static void main(String args[]) {
-        List<Integer> nums = Arrays.asList(7,1,3,4,1,7);
+        List<Integer> nums = Arrays.asList(7,1,3,4,1,7,7,8,7);
       //total O(2n) = On
-        System.out.println("Minimum gap {7,1,3,4,1,7}: " + minimumGap(nums));
+        System.out.println("Minimum gap {7,1,3,4,1,7,7,8,7}: " + minimumGap(nums));
     }
     
     public static int minimumGap(List<Integer> list){
