@@ -2,7 +2,7 @@ package day12;
 
 public class SquareInteger {
 
-//	static int count;
+	static int count;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Square Integer from 17 to 24: " + squareInteger(17,24));
@@ -27,8 +27,8 @@ public class SquareInteger {
 				r = m - 1;
 			else
 				return m;
-		}
-			
+		}	
+		m = (m*m < num) ? m + 1 : m;	
 		return m;
 	}
 	
@@ -38,17 +38,8 @@ public class SquareInteger {
 		//worst case: sqrt run from 0 to sqrt(end) -> O sqrt(end)
 		while(sqrt*sqrt <= end) {
 //			++count;
-			if(sqrt*sqrt == start) {
-				++countSquareInteger;				
-				++sqrt;
-				start = sqrt*sqrt;
-			}else if(sqrt*sqrt > start) {
-				++countSquareInteger;
-				++sqrt;
-				start = sqrt*sqrt;
-			}else {
-				++sqrt;
-			}
+			++countSquareInteger;
+			++sqrt;
 		}	
 		return countSquareInteger;
 		//->total:  O sqrt(end)
